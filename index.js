@@ -1,6 +1,6 @@
 
 //first set of Inspirational quotes
-const inspirational1 = [`1. “When you have a dream, you’ve got to grab it and never let go.”
+const inspirational = [`1. “When you have a dream, you’ve got to grab it and never let go.”
 — Carol Burnett`,
 
 `2. “Nothing is impossible. The word itself says ‘I’m possible!'”
@@ -14,7 +14,7 @@ const inspirational1 = [`1. “When you have a dream, you’ve got to grab it an
 
 `5. “Life has got all those twists and turns. You’ve got to hold on tight and off you go.”
 — Nicole Kidman`]
-console.log(inspirational1)
+console.log(inspirational)
 
 // second set of funny quotes.
 
@@ -36,3 +36,53 @@ const funny = [
 ]
 
 console.log(funny)
+// set of facts
+
+const facts = [
+    `The scientific term for brain freeze is “sphenopalatine ganglioneuralgia”.`,`
+
+    Canadians say “sorry” so much that a law was passed in 2009 declaring that an apology can’t be used as evidence of admission to guilt.`,`
+    
+    Back when dinosaurs existed, there used to be volcanoes that were erupting on the moon.`,`
+    
+    The only letter that doesn’t appear on the periodic table is J.`,`
+    
+    One habit of intelligent humans is being easily annoyed by people around them, but saying nothing in order to avoid a meaningless argument.`
+]
+
+console.log(facts)
+
+const quotes = {inspirational, funny, facts }
+
+console.log(quotes);
+//generates a random number integer
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+//picks a number from 0- 2
+let pickType = getRandomInt(3);
+
+//pick a quote number
+
+let pickQuote = getRandomInt(5)
+
+const showQuote = () => {
+    let typeOfQuote = ''
+    switch(pickType) {
+        case 0:
+            typeOfQuote = 'inspirational';
+            break;
+        case 1:
+            typeOfQuote = 'funny';
+            break
+        case 2:
+            typeOfQuote = 'facts';
+            break;
+    }
+
+
+    console.log(`you picked a ${typeOfQuote} Quote. Your random Quote is: ${quotes[typeOfQuote][pickQuote]}`)
+}
+
+showQuote()
+
